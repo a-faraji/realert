@@ -1,18 +1,21 @@
-import {FC, ReactNode} from 'react';
+import { FC, ReactNode } from 'react';
 
 export type RealertId = number;
 
 export type RealertConfig = {
   Template: FC<RealertTemplateProps>;
-}
-
-export type RealertProps = Omit<RealertTemplateProps, 'open' | 'content'> & {
-  autoHide?: number;
 };
+
+export type RealertProps<Parent extends RealertTemplateProps = RealertTemplateProps> = Partial<
+  Omit<Parent, 'open' | 'content' | 'onClose'> & {
+    autoHide: number;
+    onClose: (id: RealertId) => void;
+  }
+>;
 
 export type RealertTemplateProps = {
   open: boolean;
-  onClose: (id: RealertId) => void;
+  onClose: () => void;
   title?: string;
   content: ReactNode;
 };
