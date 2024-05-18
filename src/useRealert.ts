@@ -2,6 +2,11 @@ import { ComponentProps, FC, ReactNode, useCallback, useContext, useMemo } from 
 import { RealertContext } from './RealertContext';
 import { RealertId, RealertProps, RealertTemplateProps } from './types';
 
+export default function useRealert<Template extends FC<RealertTemplateProps>>(): {
+  show: (message: ReactNode, props?: RealertProps<ComponentProps<Template>>) => RealertId;
+  hide: (id: RealertId) => void;
+};
+
 export default function useRealert<Template extends FC<RealertTemplateProps>>() {
   const context = useContext(RealertContext);
 

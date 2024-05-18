@@ -2,8 +2,7 @@
   "name": "realert",
   "version": "0.0.1",
   "description": "A React alternative for simple alert function.",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "files": [
@@ -37,6 +36,7 @@
     "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
