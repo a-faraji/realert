@@ -16,6 +16,6 @@ export type RealertProps<Parent extends RealertTemplateProps = RealertTemplatePr
 export type RealertTemplateProps = {
   open: boolean;
   onClose: () => void;
-  title?: string;
+  title?: ReactNode;
   content: ReactNode;
 };
