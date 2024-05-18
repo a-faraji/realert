@@ -1,0 +1,20 @@
+.realert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: aliceblue;
+    padding: 1rem;
+    width: 100%;
+    max-width: 40rem;
+    transform: translate(-50%, -50%);
+    line-height: 1.2;
+}
+
+.realert > .realertActions {
+    text-align: right;
+}
+
+.realert > .realertBody {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
