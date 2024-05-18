@@ -33,7 +33,6 @@ const RealertProvider: FC<RealertProviderProps> = ({ children, Template }) => {
   const removeAlert = useCallback((id: RealertId) => {
     setAlerts((oldAlerts) => {
       const newAlerts = new Map(oldAlerts);
-      console.log(newAlerts);
       if (newAlerts.has(id)) {
         newAlerts.delete(id);
       } else {
