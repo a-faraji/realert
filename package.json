@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/a-faraji/realert"
   },
+  "bugs": {
+    "url": "https://github.com/a-faraji/realert/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
