@@ -1,5 +1,6 @@
 {
   "name": "@a-faraji/realert",
+  "private": false,
   "version": "0.0.1",
   "description": "A React utility library for simple alert function.",
   "license": "MIT",
@@ -14,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/a-faraji/realert/issues"
   },
+  "keywords": ["alert", "react", "reactjs", "procedural alert"],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
