@@ -59,7 +59,7 @@ Realert can be used with custom alert templates. The following templates are goi
 - [Chakra UI](https://v2.chakra-ui.com/) (AlertDialog component): *Coming Soon!*
 
 OR you can create your own alert template. Just implement a Functional Component with `RealertTemplateProps` 
-(and additional props). Take a look at [DefaultTemplate](https://github.com/a-faraji/realert/blob/main/src/templates/DefaultTemplate.tsx) as an example.
+(and additional props). Take a look at [DefaultTemplate](src/templates/DefaultTemplate.tsx) as an example.
 
 ## API
 *Coming Soon!*
