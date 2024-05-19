@@ -16,6 +16,11 @@ export default [
         format: 'cjs',
         sourcemap: true,
       },
+      {
+        file: pkg.module,
+        format: 'es',
+        sourcemap: true,
+      },
     ],
     plugins: [
       peerDepsExternal(),
@@ -31,7 +36,7 @@ export default [
     output: [
       {
         file: 'dist/index.d.ts',
-        format: 'cjs',
+        format: 'es',
       },
     ],
     plugins: [
@@ -43,8 +48,13 @@ export default [
     input: 'src/templates/index.ts',
     output: [
       {
-        file: 'dist/templates.js',
+        file: 'dist/cjs/templates.js',
         format: 'cjs',
+        sourcemap: true,
+      },
+      {
+        file: 'dist/esm/templates.js',
+        format: 'es',
         sourcemap: true,
       },
     ],
@@ -62,7 +72,7 @@ export default [
     output: [
       {
         file: 'dist/templates.d.ts',
-        format: 'cjs',
+        format: 'es',
       },
     ],
     plugins: [
