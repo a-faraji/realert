@@ -1,8 +1,9 @@
 import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 import { RealertConfig, RealertId, RealertTemplateProps } from './types';
 import { RealertContext } from './RealertContext';
+import { DefaultTemplate } from './templates';
 
-const RealertProvider: FC<RealertProviderProps> = ({ children, Template }) => {
+const RealertProvider: FC<RealertProviderProps> = ({ children, Template = DefaultTemplate }) => {
   const [alerts, setAlerts] = useState<Map<RealertId, RealertTemplateProps>>(new Map());
 
   const lastId = useRef<RealertId>(0);
