@@ -14,7 +14,7 @@ const DefaultTemplate: FC<RealertTemplateProps & { divider?: boolean }> = ({ ope
         )}
         <div className={'realertBody'}>{content}</div>
         <div className={'realertActions'}>
-          <button onClick={onClose}>Ok</button>
+          <button onClick={onClose}>OK</button>
         </div>
       </div>
     )
