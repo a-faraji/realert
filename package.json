@@ -1,7 +1,16 @@
 {
-  "name": "realert",
+  "name": "@a-faraji/realert",
   "version": "0.0.1",
-  "description": "A React alternative for simple alert function.",
+  "description": "A React utility library for simple alert function.",
+  "license": "MIT",
+  "author": {
+    "email": "ali.faraji90@gmail.com",
+    "name": "Ali Faraji"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-faraji/realert"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
