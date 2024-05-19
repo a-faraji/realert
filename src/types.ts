@@ -17,5 +17,6 @@ export type RealertTemplateProps = {
   open: boolean;
   onClose: () => void;
   title?: ReactNode;
+  okText?: string;
   content: ReactNode;
 };
