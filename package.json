@@ -1,7 +1,7 @@
 {
   "name": "@a-faraji/realert",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A React utility library for simple alert function.",
   "license": "MIT",
   "author": {
