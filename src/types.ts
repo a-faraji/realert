@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 export type RealertId = number;
 
 export type RealertConfig = {
-  Template?: FC<RealertTemplateProps>;
+  template?: FC<RealertTemplateProps>;
 };
 
 export type RealertProps<Parent extends RealertTemplateProps = RealertTemplateProps> = Partial<

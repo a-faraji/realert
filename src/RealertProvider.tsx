@@ -3,7 +3,7 @@ import { RealertConfig, RealertId, RealertTemplateProps } from './types';
 import { RealertContext } from './RealertContext';
 import { DefaultTemplate } from './templates';
 
-const RealertProvider: FC<RealertProviderProps> = ({ children, Template = DefaultTemplate }) => {
+const RealertProvider: FC<RealertProviderProps> = ({ children, template = DefaultTemplate }) => {
   const [alerts, setAlerts] = useState<Map<RealertId, RealertTemplateProps>>(new Map());
 
   const lastId = useRef<RealertId>(0);
@@ -52,11 +52,13 @@ const RealertProvider: FC<RealertProviderProps> = ({ children, Template = Defaul
     [addAlert, editAlert, removeAlert],
   );
 
+  const TemplateComponent = template;
+
   return (
     <RealertContext.Provider value={contextValue}>
       {children}
       {[...alerts.entries()].map((alert) => (
-        <Template key={alert[0]} {...alert[1]} />
+        <TemplateComponent key={alert[0]} {...alert[1]} />
       ))}
     </RealertContext.Provider>
   );

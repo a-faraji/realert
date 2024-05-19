@@ -44,40 +44,4 @@ export default [
     ],
     external: [/\.css$/],
   },
-  {
-    input: 'src/templates/index.ts',
-    output: [
-      {
-        file: 'dist/cjs/templates.js',
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
-        file: 'dist/esm/templates.js',
-        format: 'es',
-        sourcemap: true,
-      },
-    ],
-    plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
-      terser(),
-      postcss(),
-    ],
-  },
-  {
-    input: 'src/templates/index.ts',
-    output: [
-      {
-        file: 'dist/templates.d.ts',
-        format: 'es',
-      },
-    ],
-    plugins: [
-      dts(),
-    ],
-    external: [/\.css$/],
-  },
 ];
