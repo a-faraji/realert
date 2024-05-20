@@ -55,11 +55,34 @@ export default function AddPostExample(/* props */) {
 ## Alert Templates
 
 Realert can be used with custom alert templates. The following templates are going to be implemented:
-- [MaterialUI](https://mui.com/) (Dialog component): *Coming Soon!*
-- [Chakra UI](https://v2.chakra-ui.com/) (AlertDialog component): *Coming Soon!*
 
+### Material UI
+
+[Material UI](https://mui.com/) should be installed and configured. 
+Please be sure that `RealertProvider` is inside the MUI's `ThemeProvider`. 
+
+Install the template:
+
+```shell
+npm i @a-faraji/react-template-mui
+```
+
+And pass the template to `RealertProvider` like this:
+
+```tsx
+import RealertTemplateMui from '@a-faraji/realert-template-mui';
+// ...
+<RealertProvider template={RealertTemplateMui}>
+  {/* ... rest of your code */}
+</RealertProvider>
+```
+
+### Chakra UI
+*Coming Soon!*
+
+### Custom Template
 OR you can create your own alert template. Just implement a Functional Component with `RealertTemplateProps` 
-(and additional props). Take a look at [DefaultTemplate](src/templates/DefaultTemplate.tsx) as an example.
+(and additional props). Take a look at [DefaultTemplate](src/templates/DefaultTemplate.tsx) or [MUI Template](https://github.com/a-faraji/realert-template-mui) as an example.
 
 ## API
 *Coming Soon!*
