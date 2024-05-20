@@ -1,13 +1,13 @@
-import { ComponentProps, FC, ReactNode, useCallback, useContext, useMemo } from 'react';
+import { ReactNode, useCallback, useContext, useMemo } from 'react';
 import { RealertContext } from './RealertContext';
 import { RealertId, RealertProps, RealertTemplateProps } from './types';
 
-export default function useRealert<Template extends FC<RealertTemplateProps>>(): {
-  show: (message: ReactNode, props?: RealertProps<ComponentProps<Template>>) => RealertId;
+export default function useRealert<TemplateProps extends RealertTemplateProps>(): {
+  show: (message: ReactNode, props?: RealertProps<TemplateProps>) => RealertId;
   hide: (id: RealertId) => void;
 };
 
-export default function useRealert<Template extends FC<RealertTemplateProps>>() {
+export default function useRealert<TemplateProps extends RealertTemplateProps>() {
   const context = useContext(RealertContext);
 
   if (!context) {
@@ -22,7 +22,7 @@ export default function useRealert<Template extends FC<RealertTemplateProps>>() 
   );
 
   const show = useCallback(
-    (message: ReactNode, props: RealertProps<ComponentProps<Template>> = {}) => {
+    (message: ReactNode, props: RealertProps<TemplateProps> = {}) => {
       // create the alert
       const id = context.addAlert({
         open: false,
