@@ -1,4 +1,5 @@
 # Realert
+
 [![Realert Build](https://github.com/a-faraji/realert/actions/workflows/build.yml/badge.svg)](https://github.com/a-faraji/realert/actions/workflows/build.yml)
 
 A simple functional alert for React projects.
@@ -6,18 +7,21 @@ A simple functional alert for React projects.
 **Note: This library is in testing phase and may change in the future.**
 
 ## Table of contents
+
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Alert Templates](#alert-templates)
-   - [Material UI Template](#material-ui)
-   - [Chakra UI Template](#chakra-ui)
-   - [Custom Template](#custom-template)
+    - [Material UI Template](#material-ui)
+    - [Chakra UI Template](#chakra-ui)
+    - [Custom Template](#custom-template)
 4. [API](#api)
 
 ## Installation
+
 ```shell
 npm i @a-faraji/realert
 ```
+
 ```shell
 yarn add @a-faraji/realert
 ```
@@ -46,12 +50,12 @@ import { useRealert } from '@a-faraji/realert';
 
 export default function AddPostExample(/* props */) {
   const alert = useRealert();
-  
+
   const onClick = () => {
     // do some stuff
     alert.show('The process was successful!')
   }
-  
+
   return (
     <div>
       {/* ... */}
@@ -69,8 +73,8 @@ Realert can be used with custom alert templates. The following templates are goi
 
 [*Go to Repo →*](https://github.com/a-faraji/realert-template-mui)
 
-[Material UI](https://mui.com/) should be installed and configured. 
-Please be sure that `RealertProvider` is inside the MUI's `ThemeProvider`. 
+[Material UI](https://mui.com/) should be installed and configured.
+Please be sure that `RealertProvider` is inside the MUI's `ThemeProvider`.
 
 Install the template:
 
@@ -89,21 +93,25 @@ import RealertTemplateMui from '@a-faraji/realert-template-mui';
 ```
 
 ### Chakra UI
+
 *Coming Soon!*
 
 ### Custom Template
-OR you can create your own alert template. Just implement a Functional Component with `RealertTemplateProps` 
-(and additional props). Take a look at [DefaultTemplate](src/templates/DefaultTemplate.tsx) or [MUI Template](https://github.com/a-faraji/realert-template-mui) as an example.
+
+OR you can create your own alert template. Just implement a Functional Component with `RealertTemplateProps`
+(and additional props). Take a look at [DefaultTemplate](src/templates/DefaultTemplate.tsx)
+or [MUI Template](https://github.com/a-faraji/realert-template-mui) as an example.
 
 ## API
 
 ### RealertProvider
 
-| Prop     | Type                         | Description | Required |
-|----------|------------------------------|-------------|----------|
-| template | A realert template component |             | *No*     |
+| Prop     | Type | Description                  | Required                           |
+|----------|------|------------------------------|------------------------------------|
+| template |      | A realert template component | *No*. Defaults to Default Template |
 
 ### useRealert
+
 @Returns
 
 | Prop | Type                                                                    | Description                                             |
