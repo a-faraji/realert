@@ -1,8 +1,25 @@
 import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
-import { RealertConfig, RealertId, RealertTemplateProps } from './types';
+import { RealertId, RealertTemplateProps } from './types';
 import { RealertContext } from './RealertContext';
 import { DefaultTemplate } from './templates';
 
+/**
+ * All the codes should be inside `RealertProvider`
+ *
+ * ### Usage
+ * ```tsx
+ * import React from 'react';
+ * import { RealertProvider } from '@a-faraji/realert';
+ *
+ * export default function App() {
+ *   return (
+ *     <RealertProvider>
+ *       // Rest of code
+ *     </RealertProvider>
+ *   );
+ * };
+ * ```
+ */
 const RealertProvider: FC<RealertProviderProps> = ({ children, template = DefaultTemplate }) => {
   const [alerts, setAlerts] = useState<Map<RealertId, RealertTemplateProps>>(new Map());
 
@@ -64,7 +81,21 @@ const RealertProvider: FC<RealertProviderProps> = ({ children, template = Defaul
   );
 };
 
-export type RealertProviderProps = RealertConfig & {
+/**
+ * Props for the `RealertProvider` component.
+ */
+export type RealertProviderProps = {
+  /**
+   * The template to be used for showing alerts.
+   * If not provided, the default template will be used.
+   *
+   * @optional
+   */
+  template?: FC<RealertTemplateProps>;
+
+  /**
+   * The normal app content that should be passed as children.
+   */
   children: React.ReactNode;
 };
 

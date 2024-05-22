@@ -1,21 +1,23 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export type RealertId = number;
-
-/**
- * Configurations that are valid for `RealertProvider`
- */
-export type RealertConfig = {
-  template?: FC<RealertTemplateProps>;
-};
 
 /**
  * Props that should be given to `useRealert` hook.
  */
 export type RealertProps<Parent extends RealertTemplateProps = RealertTemplateProps> = Partial<
   Omit<Parent, 'open' | 'content' | 'onClose'> & {
+    /**
+     * number of milliseconds for the alert to hide automatically
+     */
     autoHide: number;
-    onClose: (id: RealertId) => void;
+    /**
+     * Function to be called when the user tries to close the alert.
+     *
+     * **Note:** if the function returns `true`, the alert will close.
+     * @param id the id of the alert.
+     */
+    onClose: (id: RealertId) => void | boolean;
   }
 >;
 

@@ -36,7 +36,10 @@ export default function useRealert<TemplateProps extends RealertTemplateProps>()
         open: true,
         onClose: () => {
           if (props?.onClose) {
-            props.onClose(id);
+            const result = props.onClose(id);
+            if (result === true) {
+              hide(id);
+            }
           } else {
             hide(id);
           }
