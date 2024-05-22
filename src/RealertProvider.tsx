@@ -3,23 +3,6 @@ import { RealertId, RealertTemplateProps } from './types';
 import { RealertContext } from './RealertContext';
 import { DefaultTemplate } from './templates';
 
-/**
- * All the codes should be inside `RealertProvider`
- *
- * ### Usage
- * ```tsx
- * import React from 'react';
- * import { RealertProvider } from '@a-faraji/realert';
- *
- * export default function App() {
- *   return (
- *     <RealertProvider>
- *       // Rest of code
- *     </RealertProvider>
- *   );
- * };
- * ```
- */
 const RealertProvider: FC<RealertProviderProps> = ({ children, template = DefaultTemplate }) => {
   const [alerts, setAlerts] = useState<Map<RealertId, RealertTemplateProps>>(new Map());
 

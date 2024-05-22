@@ -2,9 +2,6 @@ import { ReactNode } from 'react';
 
 export type RealertId = number;
 
-/**
- * Props that should be given to `useRealert` hook.
- */
 export type RealertProps<Parent extends RealertTemplateProps = RealertTemplateProps> = Partial<
   Omit<Parent, 'open' | 'content' | 'onClose'> & {
     /**
@@ -21,10 +18,6 @@ export type RealertProps<Parent extends RealertTemplateProps = RealertTemplatePr
   }
 >;
 
-/**
- * The base props for any template which is written for Realert.
- * These props can be extended by the template.
- */
 export type RealertTemplateProps = {
   open: boolean;
   onClose: () => void;
