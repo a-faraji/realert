@@ -1,10 +1,10 @@
 # Realert
 
+[![Created Badge](https://badges.pufler.dev/created/a-faraji/realert)](https://badges.pufler.dev)
+[![Updated Badge](https://badges.pufler.dev/updated/a-faraji/realert)](https://badges.pufler.dev)
 [![Realert Build](https://github.com/a-faraji/realert/actions/workflows/build.yml/badge.svg)](https://github.com/a-faraji/realert/actions/workflows/build.yml)
 
 A simple functional alert for React projects.
-
-**Note: This library is in testing phase and may change in the future.**
 
 ## Table of contents
 
@@ -12,7 +12,6 @@ A simple functional alert for React projects.
 2. [Usage](#usage)
 3. [Alert Templates](#alert-templates)
     - [Material UI Template](#material-ui)
-    - [Chakra UI Template](#chakra-ui)
     - [Custom Template](#custom-template)
 4. [API](#api)
 
@@ -92,13 +91,9 @@ import RealertTemplateMui from '@a-faraji/realert-template-mui';
 </RealertProvider>
 ```
 
-### Chakra UI
-
-*Coming Soon!*
-
 ### Custom Template
 
-OR you can create your own alert template. Just implement a Functional Component with `RealertTemplateProps`
+You can create your own alert template. Just implement a Functional Component with `RealertTemplateProps`
 (and additional props). Take a look at [DefaultTemplate](src/templates/DefaultTemplate.tsx)
 or [MUI Template](https://github.com/a-faraji/realert-template-mui) as an example.
 
