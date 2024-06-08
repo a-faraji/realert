@@ -5,6 +5,7 @@ import { DefaultTemplate } from './templates';
 
 const RealertProvider: FC<RealertProviderProps> = ({ children, template = DefaultTemplate }) => {
   const [alerts, setAlerts] = useState<Map<RealertId, RealertTemplateProps>>(new Map());
+  const alertsArray = useMemo(() => [...alerts.entries()], [alerts]);
 
   const lastId = useRef<RealertId>(0);
 
@@ -57,7 +58,7 @@ const RealertProvider: FC<RealertProviderProps> = ({ children, template = Defaul
   return (
     <RealertContext.Provider value={contextValue}>
       {children}
-      {[...alerts.entries()].map((alert) => (
+      {alertsArray.map((alert) => (
         <TemplateComponent key={alert[0]} {...alert[1]} />
       ))}
     </RealertContext.Provider>
